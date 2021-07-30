@@ -19,7 +19,7 @@ def Clean(text):
     return text
 
 def Load_Predict(text):
-    tfidf = joblib.load("tfidf_model-contract")
+    tfidf = joblib.load("tfidf_model_contract")
     X_pred = tfidf.transform([text]).todense()
     clf = joblib.load("LR-model-Contract")
     prediction = clf.predict(X_pred)
